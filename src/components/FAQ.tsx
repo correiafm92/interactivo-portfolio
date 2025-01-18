@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "Como contratar os serviços?",
-    answer: "É super simples! Basta clicar no botão 'Start Creating' no topo da página ou nos contatar através do formulário. Nossa equipe entrará em contato em até 24 horas para entender suas necessidades e iniciar o projeto do seu portfólio.",
+    answer: "É super simples! Basta conversar com nosso assistente virtual logo abaixo. Ele irá entender suas necessidades e guiá-lo através do processo de criação do seu portfólio personalizado.",
   },
 ];
 

@@ -27,9 +27,10 @@ const CountUp = ({ end, duration = 5, prefix = "", suffix = "" }) => {
   const nodeRef = useRef(null);
   const inView = useInView(nodeRef);
   const decimals = String(end).includes(".") ? String(end).split(".")[1].length : 0;
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (inView) {
+    if (inView && !hasAnimated) {
       let startTime;
       let animationFrame;
 
@@ -42,6 +43,7 @@ const CountUp = ({ end, duration = 5, prefix = "", suffix = "" }) => {
           animationFrame = requestAnimationFrame(animate);
         } else {
           setCount(end);
+          setHasAnimated(true);
         }
       };
 
@@ -53,7 +55,7 @@ const CountUp = ({ end, duration = 5, prefix = "", suffix = "" }) => {
         }
       };
     }
-  }, [end, duration, decimals, inView]);
+  }, [end, duration, decimals, inView, hasAnimated]);
 
   return (
     <span ref={nodeRef}>

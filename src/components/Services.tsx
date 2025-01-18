@@ -4,18 +4,18 @@ import { Palette, Lightbulb, Zap } from "lucide-react";
 const services = [
   {
     icon: Palette,
-    title: "Visual Excellence",
-    description: "We turn your portfolio into a visual masterpiece that captures attention and holds it.",
+    title: "Excelência Visual",
+    description: "Transformamos seu portfólio em uma obra-prima visual que captura e mantém a atenção.",
   },
   {
     icon: Lightbulb,
-    title: "Smart Interactions",
-    description: "Intuitive designs that guide visitors through your work with elegance and purpose.",
+    title: "Interações Inteligentes",
+    description: "Designs intuitivos que guiam os visitantes pelo seu trabalho com elegância e propósito.",
   },
   {
     icon: Zap,
-    title: "Lightning Fast",
-    description: "Optimized performance because great experiences shouldn't keep anyone waiting.",
+    title: "Velocidade Impressionante",
+    description: "Performance otimizada porque grandes experiências não devem fazer ninguém esperar.",
   },
 ];
 
@@ -25,13 +25,13 @@ export const Services = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <span className="px-4 py-1 bg-secondary text-accent rounded-full text-sm font-medium mb-6 inline-block">
-            Our Services
+            Nossos Serviços
           </span>
           <h2 className="text-4xl font-bold text-accent mb-4">
-            Crafting Digital Excellence
+            Criando Excelência Digital
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We don't just build portfolios—we create digital experiences that leave lasting impressions.
+            Não apenas construímos portfólios — criamos experiências digitais que deixam impressões duradouras.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

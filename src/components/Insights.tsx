@@ -1,23 +1,68 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Users, Clock, Award } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
 
 const stats = [
   {
     icon: Users,
-    value: "90,3%",
+    value: 90.3,
     label: "Clientes Satisfeitos",
+    suffix: "%"
   },
   {
     icon: Award,
-    value: "+40",
+    value: 40,
     label: "Projetos Entregues",
+    prefix: "+"
   },
   {
     icon: Clock,
-    value: "3",
+    value: 3,
     label: "Anos de Experiência",
   },
 ];
+
+const CountUp = ({ end, duration = 5, prefix = "", suffix = "" }) => {
+  const [count, setCount] = useState(0);
+  const nodeRef = useRef(null);
+  const inView = useInView(nodeRef);
+  const decimals = String(end).includes(".") ? String(end).split(".")[1].length : 0;
+
+  useEffect(() => {
+    if (inView) {
+      let startTime;
+      let animationFrame;
+
+      const animate = (currentTime) => {
+        if (!startTime) startTime = currentTime;
+        const progress = (currentTime - startTime) / (duration * 1000);
+
+        if (progress < 1) {
+          setCount(Number((end * Math.min(progress, 1)).toFixed(decimals)));
+          animationFrame = requestAnimationFrame(animate);
+        } else {
+          setCount(end);
+        }
+      };
+
+      animationFrame = requestAnimationFrame(animate);
+
+      return () => {
+        if (animationFrame) {
+          cancelAnimationFrame(animationFrame);
+        }
+      };
+    }
+  }, [end, duration, decimals, inView]);
+
+  return (
+    <span ref={nodeRef}>
+      {prefix}
+      {count}
+      {suffix}
+    </span>
+  );
+};
 
 export const Insights = () => {
   return (
@@ -44,7 +89,13 @@ export const Insights = () => {
               <div className="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <stat.icon className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-4xl font-bold text-accent mb-2">{stat.value}</h3>
+              <h3 className="text-4xl font-bold text-accent mb-2">
+                <CountUp 
+                  end={stat.value} 
+                  prefix={stat.prefix || ""} 
+                  suffix={stat.suffix || ""} 
+                />
+              </h3>
               <p className="text-gray-600">{stat.label}</p>
             </motion.div>
           ))}

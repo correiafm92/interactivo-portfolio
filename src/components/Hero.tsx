@@ -15,7 +15,7 @@ export const Hero = () => {
             <img
               src="/lovable-uploads/3d17ec58-f075-418d-bb7a-441c79e5ca3a.png"
               alt="Portfolio Creator Logo"
-              className="w-24 h-24 mx-auto mb-8 animate-float"
+              className="w-24 h-24 mx-auto mb-8"
             />
           </motion.div>
           <motion.div
@@ -33,7 +33,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl md:text-6xl font-bold text-accent mb-6 leading-tight"
           >
-            Seu Portfólio Tão Bonito Quanto Um Flamingo Rosa 🦩
+            Seu Portfólio Tão Bonito Quanto Um Flamingo Rosa
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export const Hero = () => {
               Começar Agora
             </button>
             <button className="px-8 py-3 border-2 border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1">
-              Ver Exemplos
+              Portfólio da Livefolio
             </button>
           </motion.div>
         </div>

@@ -1,6 +1,24 @@
 import { motion } from "framer-motion";
+import { useToast } from "@/hooks/use-toast";
 
 export const Hero = () => {
+  const { toast } = useToast();
+
+  const scrollToChatbot = () => {
+    const element = document.getElementById('chatbot');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handlePortfolioClick = () => {
+    toast({
+      description: "Estamos selecionando os melhores projetos do mês",
+      className: "bg-[#FE7273] text-white border-none",
+      duration: 3000,
+    });
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-secondary to-white">
       <div className="absolute inset-0 bg-[url('/lovable-uploads/3d17ec58-f075-418d-bb7a-441c79e5ca3a.png')] opacity-5 bg-repeat" />
@@ -49,10 +67,16 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex gap-4 justify-center"
           >
-            <button className="px-8 py-3 bg-accent text-white rounded-lg hover:bg-opacity-90 transition-all transform hover:-translate-y-1">
+            <button
+              onClick={scrollToChatbot}
+              className="px-8 py-3 bg-accent text-white rounded-lg hover:bg-opacity-90 transition-all transform hover:-translate-y-1"
+            >
               Começar Agora
             </button>
-            <button className="px-8 py-3 border-2 border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1">
+            <button
+              onClick={handlePortfolioClick}
+              className="px-8 py-3 border-2 border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1"
+            >
               Portfólio da Livefolio
             </button>
           </motion.div>

@@ -24,7 +24,7 @@ export const Story = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-primary mb-6">Quem somos</h2>
+            <h2 className="text-3xl font-bold text-accent mb-6">Quem somos</h2>
             <div className="prose prose-lg text-gray-600">
               <p className="mb-4">
                 Na Livefolio somos especialistas em dar vida às histórias e conquistas dos nossos clientes por meio de portfólios interativos que fogem do óbvio. Cada detalhe é pensado para capturar a essência da sua trajetória, traduzindo sua identidade em uma experiência visual e interativa que vai além do design convencional.

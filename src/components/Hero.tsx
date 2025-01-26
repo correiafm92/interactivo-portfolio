@@ -8,6 +8,8 @@ export const Hero = () => {
     const element = document.getElementById('chatbot');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.log('Chatbot element not found');
     }
   };
 

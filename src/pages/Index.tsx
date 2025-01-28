@@ -3,6 +3,7 @@ import { Services } from "../components/Services";
 import { UniqueValue } from "../components/UniqueValue";
 import { Insights } from "../components/Insights";
 import { Story } from "../components/Story";
+import { Technologies } from "../components/Technologies";
 import { FAQ } from "../components/FAQ";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
       <UniqueValue />
       <Insights />
       <Story />
+      <Technologies />
       <FAQ />
     </main>
   );

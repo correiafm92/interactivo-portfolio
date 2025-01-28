@@ -40,9 +40,9 @@ export const Technologies = () => {
               className="flex flex-col items-center space-y-4"
             >
               <img
-                src="/lovable-uploads/e8bbeadb-83b5-4ca3-822b-c258b379071f.png"
-                alt="HTML CSS JS"
-                className="w-24 h-16 object-contain"
+                src="/lovable-uploads/786d5295-d433-44d7-91df-cdc0f3f9785c.png"
+                alt="HTML5"
+                className="w-16 h-16 object-contain"
               />
               <p className="text-lg font-medium text-accent">HTML5</p>
               <p className="text-sm text-gray-600 text-center">Estruturação</p>
@@ -55,9 +55,11 @@ export const Technologies = () => {
               viewport={{ once: true }}
               className="flex flex-col items-center space-y-4"
             >
-              <div className="w-16 h-16 bg-[#264DE4] rounded flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">CSS</span>
-              </div>
+              <img
+                src="/lovable-uploads/9b8cf4b4-e2f1-439e-b917-0e0f5f5de4d4.png"
+                alt="CSS3"
+                className="w-16 h-16 object-contain"
+              />
               <p className="text-lg font-medium text-accent">CSS3</p>
               <p className="text-sm text-gray-600 text-center">Estilização</p>
             </motion.div>
